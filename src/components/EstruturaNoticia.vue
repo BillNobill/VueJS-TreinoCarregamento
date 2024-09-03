@@ -25,11 +25,20 @@
           que é semelhante à da crosta terrestre, mas também a inclinação axial
           da Terra.
         </p>
-        <img
-          src="../assets/lua.jpg"
-          alt="Imagem da Lua"
-          class="imagem-in-texto"
-        />
+        <div class="image-container">
+          <div class="ph-item">
+            <div class="ph-picture"></div>
+            <div class="ph-row">
+              <div class="ph-col-12 big"></div>
+            </div>
+          </div>
+          <img
+            src="../assets/lua.jpeg"
+            alt="Imagem da Lua"
+            class="imagem"
+            data-src="../assets/lua.jpg"
+          />
+        </div>
         <p>
           A Lua apresenta um movimento síncrono, o que significa que sempre
           mostra a mesma face para a Terra. Este fenômeno é resultado de forças
@@ -51,7 +60,7 @@
           plantas e regulando o clima.
         </p>
         <img
-          src="../assets/sol.jpg"
+          src="../assets/sol.jpeg"
           alt="Imagem do Sol"
           class="imagem-in-texto"
         />
@@ -77,7 +86,7 @@
           formas de vida.
         </p>
         <img
-          src="../assets/terra.jpg"
+          src="../assets/terra.jpeg"
           alt="Imagem da Terra"
           class="imagem-in-texto"
         />
@@ -100,7 +109,7 @@
           formas e cores vibrantes.
         </p>
         <img
-          src="../assets/carina_nebula.png"
+          src="../assets/carina_nebula.jpeg"
           alt="Imagem da Nebulosa Carina"
           class="imagem-in-texto"
         />
@@ -113,7 +122,7 @@
           supernovas, que enriquecem o meio interestelar com elementos pesados.
         </p>
         <img
-          src="../assets/espaco.jpg"
+          src="../assets/espaco.jpeg"
           alt="Imagem do Espaço"
           class="imagem-in-texto"
         />
@@ -126,6 +135,22 @@
 export default {
   name: "EstruturaNoticia",
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll(".imagem");
+
+  images.forEach((img) => {
+    const placeholder = img.previousElementSibling;
+
+    img.addEventListener("complete", function () {
+      console.log("Imagem carregada!");
+      placeholder.style.display = "none"; // Oculta o placeholder
+      img.classList.add("loaded"); // Exibe a imagem real
+    });
+
+    img.src = img.getAttribute("data-src"); // Inicia o carregamento da imagem
+  });
+});
 </script>
 
 <style>
@@ -174,5 +199,30 @@ h1 {
   font-size: 2em;
   margin-bottom: 10px;
   text-align: center;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.ph-item {
+  position: relative;
+  height: 200px; /* Ajuste a altura conforme necessário */
+}
+
+.ph-picture {
+  width: 100%;
+  height: 100%;
+  background: #eee; /* Cor de fundo enquanto carrega */
+}
+
+.imagem {
+  display: none; /* Oculta a imagem até que ela esteja carregada */
+}
+
+.image-container img.loaded {
+  display: block;
 }
 </style>
