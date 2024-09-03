@@ -28,7 +28,7 @@ export default {
 }
 
 .header-container {
-  max-width: 60%;
+  max-width: 100%;
   height: 60px;
   margin: 0 auto;
   display: flex;
@@ -59,5 +59,13 @@ export default {
 
 .navigation a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .navigation a {
+    color: #181818;
+    text-decoration: none;
+    font-size: 0.8em;
+  }
 }
 </style>

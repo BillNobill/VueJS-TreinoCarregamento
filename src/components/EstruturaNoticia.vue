@@ -154,6 +154,10 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <style>
+html {
+  height: 100%;
+}
+
 #noticia-estrutura {
   width: 100%;
   display: flex;
@@ -224,5 +228,70 @@ h1 {
 
 .image-container img.loaded {
   display: block;
+}
+
+@media (max-width: 768px) {
+  #noticia-estrutura {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .noticia-container {
+    max-width: 100%;
+  }
+
+  .noticia-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .noticia-conteudo h2 {
+    font-size: 1.2em;
+  }
+
+  .noticia-conteudo p {
+    font-size: 0.9em;
+  }
+
+  .imagem-in-texto {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #noticia-estrutura {
+    width: 100%;
+  }
+
+  .noticia-container {
+    max-width: 100%;
+  }
+
+  .noticia-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  .noticia-conteudo h2 {
+    font-size: 1em;
+  }
+
+  .noticia-conteudo p {
+    font-size: 0.8em;
+  }
+
+  .imagem-in-texto {
+    margin: 5px 0;
+  }
 }
 </style>
