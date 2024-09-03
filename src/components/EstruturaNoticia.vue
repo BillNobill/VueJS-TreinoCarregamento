@@ -25,8 +25,8 @@
           que é semelhante à da crosta terrestre, mas também a inclinação axial
           da Terra.
         </p>
-        <!-- <div class="image-container"> -->
-        <!-- <div class="ph-item">
+        <!-- <div class="image-container">
+          <div class="ph-item">
             <div class="ph-picture"></div>
             <div class="ph-row">
               <div class="ph-col-12 big"></div>
@@ -35,7 +35,7 @@
         <img
           src="../assets/lua.jpeg"
           alt="Imagem da Lua"
-          class="imagem"
+          class="imagem-in-texto"
           data-src="../assets/lua.jpg"
         />
         <!-- </div> -->
